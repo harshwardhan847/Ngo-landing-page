@@ -1,5 +1,6 @@
 "use client";
 
+import { Strings } from "@/constants/strings";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
@@ -14,7 +15,7 @@ export default function OurStory() {
     <main className="">
       <section className="relative h-[60vh] bg-black">
         <Image
-          src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+          src="./initiative1.avif"
           alt="Our Story"
           fill
           className="object-cover opacity-50"
@@ -40,25 +41,27 @@ export default function OurStory() {
             transition={{ duration: 0.8 }}
             className="prose prose-lg max-w-none"
           >
-            <h2>Our Beginning</h2>
-            <p>
-              Founded in 2010, HopeHaven began with a simple mission: to provide
-              shelter and support to those who needed it most. What started as a
-              small initiative has grown into a comprehensive support system for
-              homeless children and hardworking individuals facing difficult
-              times.
+            <h2 className="font-bold text-xl md:text-3xl mb-2">
+              Our Beginning
+            </h2>
+            <p className="mb-4 text-base md:text-lg">
+              Founded in 2010, {Strings.ORGANIZATION_NAME} began with a simple
+              mission: to provide shelter and support to those who needed it
+              most. What started as a small initiative has grown into a
+              comprehensive support system for homeless children and hardworking
+              individuals facing difficult times.
             </p>
 
-            <h2>Our Mission</h2>
-            <p>
+            <h2 className="font-bold text-xl md:text-3xl mb-2">Our Mission</h2>
+            <p className="mb-4 text-base md:text-lg">
               We believe that everyone deserves a chance at a better life. Our
               mission is to provide not just shelter, but hope, education, and
               opportunities for those in need to rebuild their lives and achieve
               their dreams.
             </p>
 
-            <h2>Our Impact</h2>
-            <p>
+            <h2 className="font-bold text-xl md:text-3xl mb-2">Our Impact</h2>
+            <p className=" text-base md:text-lg">
               Over the years, we&apos;ve helped thousands of individuals and
               families find their path to stability and success. Through our
               various programs and initiatives, we&apos;ve created lasting
@@ -66,13 +69,17 @@ export default function OurStory() {
               more people in need.
             </p>
 
-            <blockquote>
-              &quot;Hope is the foundation upon which dreams are built. At
-              HopeHaven, we provide that foundation.&quot;
+            <blockquote className="p-4 my-4 border-s-4 border-rose-500 bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
+              <p className="text-xl italic font-medium leading-relaxed text-gray-900 dark:text-white">
+                &quot;Hope is the foundation upon which dreams are built. At{" "}
+                {Strings.ORGANIZATION_NAME}, we provide that foundation.&quot;
+              </p>
             </blockquote>
 
-            <h2>Looking Forward</h2>
-            <p>
+            <h2 className="font-bold text-xl md:text-3xl mb-2">
+              Looking Forward
+            </h2>
+            <p className="mb-4 text-base md:text-lg">
               As we continue to grow, our commitment to serving our community
               remains unchanged. We&apos;re constantly developing new programs
               and partnerships to better serve those in need and create more

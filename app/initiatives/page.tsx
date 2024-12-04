@@ -5,28 +5,26 @@ import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Strings } from "@/constants/strings";
 
 const initiatives = [
   {
     title: "Emergency Shelter Program",
     description:
       "Providing immediate shelter and basic necessities to those in crisis.",
-    image:
-      "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "./initiative1.avif",
   },
   {
     title: "Youth Education Support",
     description:
       "Ensuring every child has access to quality education and resources.",
-    image:
-      "https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "./initiative2.avif",
   },
   {
     title: "Job Training & Placement",
     description:
       "Empowering individuals with skills and opportunities for employment.",
-    image:
-      "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "./initiative3.avif",
   },
 ];
 
@@ -40,7 +38,7 @@ export default function Initiatives() {
     <main className="">
       <section className="relative h-[50vh] bg-black">
         <Image
-          src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+          src="./initiatives.avif"
           alt="Our Initiatives"
           fill
           className="object-cover opacity-50"
@@ -86,7 +84,9 @@ export default function Initiatives() {
                     asChild
                     className="w-full bg-rose-500 hover:bg-rose-600"
                   >
-                    <Link href="/donate">Support This Initiative</Link>
+                    <Link href={Strings.DONATE_LINK}>
+                      Support This Initiative
+                    </Link>
                   </Button>
                 </div>
               </motion.div>

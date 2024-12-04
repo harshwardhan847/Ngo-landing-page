@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
 import { Heart, CreditCard, Wallet } from "lucide-react";
+import { Strings } from "@/constants/strings";
+import Link from "next/link";
 
 const donationOptions = [
   { amount: 25, label: "Provide meals for a week" },
@@ -20,23 +22,24 @@ export default function Donate() {
 
   return (
     <main className="pt-24">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-4"
         >
           <Heart className="h-16 w-16 text-rose-500 mx-auto mb-4" />
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
             Make a Difference Today
           </h1>
-          <p className="text-xl text-gray-600">
-            Your donation helps us provide shelter, education, and support to those in need.
+          <p className="text-xl md:text-2xl text-gray-600">
+            Your donation helps us provide shelter, education, and support to
+            those in need.
           </p>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -49,7 +52,9 @@ export default function Donate() {
                 key={option.amount}
                 className="p-4 border-2 border-gray-200 rounded-lg hover:border-rose-500 hover:bg-rose-50 transition-colors"
               >
-                <div className="text-2xl font-bold text-gray-900">${option.amount}</div>
+                <div className="text-2xl font-bold text-gray-900">
+                  ${option.amount}
+                </div>
                 <div className="text-gray-600">{option.label}</div>
               </button>
             ))}
@@ -74,16 +79,34 @@ export default function Donate() {
               </Button>
             </div>
           </div>
+        </motion.div> */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
+          <Button
+            asChild
+            size="lg"
+            className="bg-rose-500 hover:bg-rose-600 text-white"
+          >
+            <Link href={Strings.DONATE_LINK}>Donate</Link>
+          </Button>
         </motion.div>
 
         <div className="mt-12 text-center text-gray-600">
-          <p className="mb-4">
-            Your donation is tax-deductible. You will receive a receipt for your records.
-          </p>
-          <p>
+          {/* <p className="mb-4">
+            Your donation is tax-deductible. You will receive a receipt for your
+            records.
+          </p> */}
+          <p className=" mb-2">
             For questions about donations, please contact us at{" "}
-            <a href="mailto:donate@hopehaven.org" className="text-rose-500 hover:text-rose-600">
-              donate@hopehaven.org
+            <a
+              href={`mailto:${Strings.ORGANIZATION_EMAIL}`}
+              className="text-rose-500 hover:text-rose-600"
+            >
+              {Strings.ORGANIZATION_EMAIL}
             </a>
           </p>
         </div>

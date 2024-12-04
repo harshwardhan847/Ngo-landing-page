@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Heart, Menu, X } from "lucide-react";
+import { Strings } from "@/constants/strings";
+import { Button } from "../ui/button";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,7 +49,7 @@ const Navbar = () => {
                   : "text-white/90"
               }`}
             >
-              HopeHaven
+              {Strings.ORGANIZATION_NAME}
             </span>
           </Link>
 
@@ -66,6 +68,13 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
+            <Button
+              asChild
+              size="lg"
+              className="bg-rose-500 hover:bg-rose-600 text-white"
+            >
+              <Link href={Strings.DONATE_LINK}>Donate</Link>
+            </Button>
           </div>
 
           {/* Mobile Navigation Button */}
@@ -116,6 +125,13 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
+          <Button
+            asChild
+            size="lg"
+            className="bg-rose-500 hover:bg-rose-600 text-white"
+          >
+            <Link href={Strings.DONATE_LINK}>Donate</Link>
+          </Button>
         </motion.div>
       )}
     </nav>

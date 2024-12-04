@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Strings } from "@/constants/strings";
 
 const Hero = () => {
   return (
@@ -11,8 +12,7 @@ const Hero = () => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80')",
+            backgroundImage: "url('./header.avif')",
           }}
         >
           <div className="absolute inset-0 bg-black/40" />
@@ -31,8 +31,8 @@ const Hero = () => {
             <span className="block text-rose-400">Who Need It Most</span>
           </h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-            We provide shelter, support, and opportunities for homeless children and
-            hardworking individuals to build a better future.
+            We provide shelter, support, and opportunities for homeless children
+            and hardworking individuals to build a better future.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -40,7 +40,7 @@ const Hero = () => {
               size="lg"
               className="bg-rose-500 hover:bg-rose-600 text-white"
             >
-              <Link href="/donate">Donate Now</Link>
+              <Link href={Strings.DONATE_LINK}>Donate Now</Link>
             </Button>
             <Button
               asChild
