@@ -128,7 +128,7 @@ const Navbar = () => {
           <Button
             asChild
             size="lg"
-            className="bg-rose-500 hover:bg-rose-600 text-white"
+            className="bg-rose-500 hover:bg-rose-600 text-white w-full rounded-none"
           >
             <Link href={Strings.DONATE_LINK}>Donate</Link>
           </Button>
