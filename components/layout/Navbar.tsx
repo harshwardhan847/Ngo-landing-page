@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Heart, Menu, X } from "lucide-react";
 import { Strings } from "@/constants/strings";
 import { Button } from "../ui/button";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +42,13 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-2">
-            <Heart className="h-8 w-8 text-rose-500" />
+            <Image
+              src={"./logo.jpeg"}
+              className="rounded object-contain"
+              alt="Logo"
+              width={50}
+              height={50}
+            />
             <span
               className={`font-bold text-xl ${
                 isScrolled || isBackgroundWhite

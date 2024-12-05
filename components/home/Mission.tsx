@@ -19,7 +19,7 @@ const Mission = (props: Props) => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Mission</h2>
           {/* <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -29,14 +29,17 @@ const Mission = (props: Props) => {
         </motion.div>
 
         <div className="w-full md:text-center font-light text-justify">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus,
-          modi asperiores sint reprehenderit at maiores eius unde, omnis
-          doloremque temporibus incidunt harum suscipit ipsa. Quia pariatur est
-          temporibus blanditiis accusamus magnam nostrum ad, consequuntur
-          commodi, impedit minima aspernatur vel laboriosam iste laborum dolores
-          nulla, minus ea tempora quod? Adipisci cum nesciunt laborum ab
-          voluptatem quo corrupti voluptas laudantium sunt iure ipsa molestias,
-          optio nobis beatae? Laboriosam, provident sint? Error, vero.
+          At MUSKURAHAT FOUNDATION, our mission is to provide safe and
+          supportive shelters for homeless children and hardworking individuals
+          who lack a place to stay at night. We are committed to not only
+          offering a roof over their heads but also empowering them through
+          education in essential life skills, financial literacy, and health
+          awareness. We believe in fostering independence and self-reliance,
+          enabling individuals to break free from dependency and build a better
+          future for themselves, their families, and the nation. Our goal is to
+          create a community where everyone has the opportunity to learn, grow,
+          and achieve success, turning challenges into stepping stones toward a
+          brighter, more fulfilling life.
         </div>
       </div>
     </section>

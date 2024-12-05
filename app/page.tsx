@@ -12,7 +12,7 @@ export default function Home() {
       <Mission />
       <Initiatives />
       <Stats />
-      <Stories />
+      {/* <Stories /> */}
       <Partners />
     </main>
   );

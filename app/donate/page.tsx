@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Heart, CreditCard, Wallet } from "lucide-react";
 import { Strings } from "@/constants/strings";
 import Link from "next/link";
+import Image from "next/image";
 
 const donationOptions = [
   { amount: 25, label: "Provide meals for a week" },
@@ -27,15 +28,21 @@ export default function Donate() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-4"
+          className="text-center mb-4 flex flex-col items-center gap-8"
         >
-          <Heart className="h-16 w-16 text-rose-500 mx-auto mb-4" />
+          <Image
+            src={"./logo.jpeg"}
+            alt="Logo"
+            width={100}
+            height={100}
+            className="rounded"
+          />
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
             Make a Difference Today
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600">
-            Your donation helps us provide shelter, education, and support to
-            those in need.
+          <p className="text-xl md:text-2xl text-gray-600 mb-12">
+            Your donation helps us provide shelter, education, and
+            <br /> support to those in need.
           </p>
         </motion.div>
 

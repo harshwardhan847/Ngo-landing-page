@@ -88,7 +88,7 @@ export default function Contact() {
                 Get in Touch
               </h2>
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
+                {/* <div className="flex items-start space-x-4">
                   <MapPin className="h-6 w-6 text-rose-500 mt-1" />
                   <div>
                     <h3 className="font-semibold text-gray-900">Address</h3>
@@ -98,12 +98,12 @@ export default function Contact() {
                       City, Country
                     </p>
                   </div>
-                </div>
+                </div> */}
                 <div className="flex items-start space-x-4">
                   <Phone className="h-6 w-6 text-rose-500 mt-1" />
                   <div>
                     <h3 className="font-semibold text-gray-900">Phone</h3>
-                    <p className="text-gray-600">+1 234 567 890</p>
+                    <p className="text-gray-600">{Strings.MOBILE_NUMBER}</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">

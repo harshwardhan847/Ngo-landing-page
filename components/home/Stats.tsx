@@ -7,20 +7,20 @@ import { Home, Users, Heart } from "lucide-react";
 const stats = [
   {
     icon: Home,
-    value: "1,200+",
-    label: "People Sheltered",
+    value: "50+",
+    label: "Live Impacted",
     description: "Provided safe housing to those in need",
   },
   {
-    icon: Users,
-    value: "500+",
-    label: "Children Supported",
+    icon: Heart,
+    value: "2",
+    label: "Active Projects",
     description: "Given education and care",
   },
   {
-    icon: Heart,
-    value: "10,000+",
-    label: "Volunteer Hours",
+    icon: Users,
+    value: "5",
+    label: "Volunteers",
     description: "Dedicated to making a difference",
   },
 ];
@@ -55,7 +55,7 @@ const Stats = () => {
               <div className="text-lg font-semibold text-gray-900 mb-2">
                 {stat.label}
               </div>
-              <div className="text-gray-600">{stat.description}</div>
+              {/* <div className="text-gray-600">{stat.description}</div> */}
             </motion.div>
           ))}
         </div>

@@ -45,9 +45,9 @@ export default function OurStory() {
               Our Beginning
             </h2>
             <p className="mb-4 text-base md:text-lg">
-              Founded in 2010, {Strings.ORGANIZATION_NAME} began with a simple
-              mission: to provide shelter and support to those who needed it
-              most. What started as a small initiative has grown into a
+              Founded in Aug 2024, {Strings.ORGANIZATION_NAME} began with a
+              simple mission: to provide shelter and support to those who needed
+              it most. What started as a small initiative has grown into a
               comprehensive support system for homeless children and hardworking
               individuals facing difficult times.
             </p>

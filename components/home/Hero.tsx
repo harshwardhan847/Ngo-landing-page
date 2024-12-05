@@ -10,9 +10,10 @@ const Hero = () => {
     <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-rose-50 to-white">
       <div className="absolute inset-0">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute bg-cover inset-0  bg-top"
           style={{
-            backgroundImage: "url('./header.avif')",
+            // backgroundImage: "url('./header.avif')",
+            backgroundImage: "url('./hero.jpeg')",
           }}
         >
           <div className="absolute inset-0 bg-black/40" />
@@ -26,13 +27,13 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="space-y-8"
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-white">
-            Giving Hope to Those
-            <span className="block text-rose-400">Who Need It Most</span>
+          <h1 className="text-4xl md:text-6xl font-bold text-white md:!leading-[4.5rem]">
+            Spreading Smiles,
+            <span className="block text-rose-400"> Building Futures</span>
           </h1>
-          <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-            We provide shelter, support, and opportunities for homeless children
-            and hardworking individuals to build a better future.
+          <p className="text-xl text-gray-200 max-w-2xl mx-auto text-center">
+            Empowering lives with shelter, care, and education,
+            <br /> one smile at a time.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

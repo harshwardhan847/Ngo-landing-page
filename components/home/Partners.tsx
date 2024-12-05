@@ -40,10 +40,11 @@ const Partners = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Our Partners
+            Volunteers
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Working together with these amazing organizations to make a difference.
+            Work together with our amazing organization
+            <br /> to make a difference.
           </p>
         </motion.div>
 
