@@ -13,7 +13,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const param = usePathname()?.toLowerCase();
-  const isBackgroundWhite = param === "/donate" || param === "/contact";
+  const isBackgroundWhite =
+    param === "/donate" || param === "/contact" || param === "/volunteer";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,6 +29,7 @@ const Navbar = () => {
     { href: "/our-story", label: "Our Story" },
     { href: "/initiatives", label: "Our Initiatives" },
     { href: "/donate", label: "Donate" },
+    { href: "/volunteer", label: "Volunteer" },
     { href: "/contact", label: "Contact" },
   ];
 
