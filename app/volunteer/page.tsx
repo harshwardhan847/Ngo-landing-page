@@ -9,8 +9,28 @@ import emailjs from "@emailjs/browser";
 import { FormEvent, useState } from "react";
 import { toast } from "sonner";
 
+const interests = [
+  "Social Media",
+  "Marketing / Branding",
+  "Content Writing / Blogging / Copywriting",
+  "Fundraising",
+  "Presentation",
+  "Photography",
+  "Videography",
+  "Internet / Web",
+  "Teaching / Training / Coaching",
+  "Illustration / Design / Drawing",
+  "Multimedia / Animation",
+  "Event Planning/Management",
+  "Social Volunteering",
+  "Community Management/Engagement",
+  "Data Entry",
+  "Caregivers",
+  "Poster Creation",
+];
 export default function Contact() {
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -19,8 +39,10 @@ export default function Contact() {
     setIsLoading(true);
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const formDataObject = Object.fromEntries(formData.entries());
-    console.log(formDataObject);
+    const formDataObject = {
+      ...Object.fromEntries(formData.entries()),
+      interests: selectedInterests.join(", "),
+    };
     emailjs
       .send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
@@ -81,7 +103,7 @@ export default function Contact() {
                 id="volunteer_form"
                 onSubmit={handleFormSubmit}
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 md:gap-y-0">
                   <div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -166,18 +188,65 @@ export default function Contact() {
                           type="radio"
                           required
                           value={"Home"}
-                          className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-rose-500 rounded-full"
+                          id="home"
+                          className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-rose-500 rounded-full cursor-pointer"
                         />
-                        <p>Home</p>
+                        <label htmlFor="home" className="cursor-pointer">
+                          Home
+                        </label>
                         <input
                           name="work_preference"
                           type="radio"
                           value={"Location"}
                           required
-                          className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-rose-500 rounded-full"
+                          id="location"
+                          className="w-full px-4 py-2 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-rose-500 rounded-full"
                         />
-                        <p>Location</p>
+                        <label htmlFor="location" className="cursor-pointer">
+                          Location
+                        </label>
                       </div>
+                    </div>
+                  </div>
+                  <div className="flex items-start flex-col flex-wrap justify-center space-x-4 md:col-span-2 ">
+                    <h3>Interests:</h3>
+                    <div className="flex  flex-wrap items-center justify-start gap-4">
+                      {interests?.map((interest) => (
+                        <div
+                          key={interest}
+                          className="flex flex-col  flex-wrap items-start justify-center"
+                        >
+                          <div className="flex items-center justify-center cursor-pointer">
+                            <input
+                              type="checkbox"
+                              name="interests"
+                              id={interest}
+                              value={interest}
+                              className=" text-rose-500 bg-gray-100 border-gray-300 rounded focus:ring-rose-500 focus:ring-2 transition-all duration-300 ease-in-out cursor-pointer"
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setSelectedInterests([
+                                    ...selectedInterests,
+                                    e.target.value,
+                                  ]);
+                                } else {
+                                  setSelectedInterests(
+                                    selectedInterests.filter(
+                                      (i) => i !== e.target.value
+                                    )
+                                  );
+                                }
+                              }}
+                            />
+                            <label
+                              htmlFor={interest}
+                              className="ml-2 text-sm font-medium text-gray-700 cursor-pointer"
+                            >
+                              {interest}
+                            </label>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>

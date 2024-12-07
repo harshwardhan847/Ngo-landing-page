@@ -28,7 +28,7 @@ const Navbar = () => {
     { href: "/", label: "Home" },
     { href: "/our-story", label: "Our Story" },
     { href: "/initiatives", label: "Our Initiatives" },
-    { href: "/donate", label: "Donate" },
+    // { href: "/donate", label: "Donate" },
     { href: "/volunteer", label: "Volunteer" },
     { href: "/contact", label: "Contact" },
   ];
